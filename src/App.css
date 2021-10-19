@@ -51,3 +51,15 @@
   text-align: left;
   margin-left: 1em;
 }
+/* 
+.category {
+  text-transform: capitalize;
+} */
+
+.categories-dropdown {
+  background-color: #d3ffc3;
+  border: #d3ffc3;
+  margin-top: 0em;
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}

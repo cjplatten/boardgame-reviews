@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
 
 const Reviews = () => {
@@ -6,6 +7,10 @@ const Reviews = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [endIndex, setEndIndex] = useState(10);
   const [reviewsTotal, setReviewsTotal] = useState(0);
+
+  const { category } = useParams();
+
+  console.log(category);
 
   useEffect(() => {
     getReviews().then((reviewsFromApi) => {
@@ -29,8 +34,8 @@ const Reviews = () => {
               </div>
               <div className="reviews-in-list-info-line">
                 <h5>
-                  {review.owner} |  {review.created_at.slice(0, 10)} | 
-                  Category: {review.category}
+                  {review.owner} | {review.created_at.slice(0, 10)} | Category:{" "}
+                  {review.category}
                 </h5>
                 {/* <h5>{review.owner}</h5>
                 <h5>{review.created_at.slice(0, 10)}</h5>

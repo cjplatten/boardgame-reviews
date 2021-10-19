@@ -13,6 +13,9 @@ function App() {
         <Route exact path="/">
           <Reviews />
         </Route>
+        <Route exact path="/category/:category">
+          <Reviews />
+        </Route>
       </Switch>
     </div>
   );
