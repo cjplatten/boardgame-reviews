@@ -1,38 +1,53 @@
 .App {
   text-align: center;
+  background-color: #f8f8f8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  background-color: #abdd9a;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Nav {
+  background-color: #d3ffc3;
+  padding: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.all-reviews {
+  list-style-type: none;
+  margin: 1.5em;
+  margin-left: 0em;
 }
 
-.App-link {
-  color: #61dafb;
+.reviews-in-list {
+  /* display: flex; */
+  border: 5px solid #e9f0f4;
+  margin-bottom: 1.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.reviews-in-list-title h4 {
+  margin: auto;
+  background-color: #d5dee4;
+  padding-top: 25px;
+  padding-bottom: 4px;
+}
+
+.reviews-in-list-info-line h5 {
+  color: #54585a;
+  margin-top: auto;
+  background-color: #d5dee4;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+.reviews-in-list-body-preview p {
+  margin-top: 1em;
+  text-align: left;
+  margin-left: 1em;
+}
+.reviews-in-list-comment-counter p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: small;
+  text-align: left;
+  margin-left: 1em;
 }
