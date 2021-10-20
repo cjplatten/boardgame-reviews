@@ -12,6 +12,7 @@
   background-color: #d3ffc3;
   padding: 1px;
   margin-bottom: 1em;
+  /* display: flex */
 }
 
 .all-reviews {
@@ -89,4 +90,8 @@
 
 .header-link:hover {
   color: #679757;
+}
+
+.nav-user{
+  text-align: right;
 }

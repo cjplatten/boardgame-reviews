@@ -4,9 +4,17 @@ import Nav from "./components/Nav";
 import { Switch, Route } from "react-router-dom";
 import Reviews from "./components/Reviews";
 import SingleReview from "./components/SingleReview";
+import { useState } from "react";
+import { UserContext } from "./contexts/UserContext";
 
 function App() {
+  const [userLogin, setUserLogin] = useState({
+    loggedIn: true,
+    user: "cooljmessy",
+  });
+
   return (
+    <UserContext.Provider value={{userLogin, setUserLogin }}>
     <div className="App">
       <Header />
       <Nav />
@@ -22,6 +30,7 @@ function App() {
         </Route>
       </Switch>
     </div>
+    </UserContext.Provider>
   );
 }
 
