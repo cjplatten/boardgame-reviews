@@ -1,26 +1,17 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getReviews } from "../utils/api";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
-  const [startIndex, setStartIndex] = useState(0);
-  const [endIndex, setEndIndex] = useState(10);
-  const [reviewsTotal, setReviewsTotal] = useState(0);
 
-  const { category } = useParams();
-
-  console.log(category);
+//   console.log(category);
 
   useEffect(() => {
     getReviews().then((reviewsFromApi) => {
-      setReviewsTotal(reviewsFromApi.length);
-      const limitedData = reviewsFromApi.slice(startIndex, endIndex);
-      setReviews(limitedData);
+      setReviews(reviewsFromApi);
     });
-  }, [startIndex, endIndex]);
-
-  console.log(reviews);
+  }, []);
 
   return (
     <div>
@@ -28,26 +19,25 @@ const Reviews = () => {
       <ul className="all-reviews">
         {reviews.map((review, index) => {
           return (
-            <li className="reviews-in-list" key={reviews.review_id}>
-              <div className="reviews-in-list-title">
-                <h4>{review.title}</h4>
-              </div>
-              <div className="reviews-in-list-info-line">
-                <h5>
-                  {review.owner} | {review.created_at.slice(0, 10)} | Category:{" "}
-                  {review.category}
-                </h5>
-                {/* <h5>{review.owner}</h5>
-                <h5>{review.created_at.slice(0, 10)}</h5>
-                <h5>Category: {review.category}</h5> */}
-              </div>
-              <div className="reviews-in-list-body-preview">
-                <p>{review.review_body.slice(0, 125)}...</p>
-              </div>
-              <div className="reviews-in-list-comment-counter">
-                <p>Comments: {review.comment_count}</p>
-              </div>
-            </li>
+            <Link to={`/reveiws/${review.review_id}`} className="card-link">
+              <li className="reviews-in-list" key={review.review_id}>
+                <div className="reviews-in-list-title">
+                  <h4>{review.title}</h4>
+                </div>
+                <div className="reviews-in-list-info-line">
+                  <h5>
+                    {review.owner} | {review.created_at.slice(0, 10)} |
+                    Category: {review.category}
+                  </h5>
+                </div>
+                <div className="reviews-in-list-body-preview">
+                  <p>{review.review_body.slice(0, 125)}...</p>
+                </div>
+                <div className="reviews-in-list-comment-vote-counters">
+                  <p>Votes: {review.votes} | Comments: {review.comment_count}</p>
+                </div>
+              </li>
+            </Link>
           );
         })}
       </ul>
