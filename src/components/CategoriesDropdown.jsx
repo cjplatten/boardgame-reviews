@@ -17,9 +17,10 @@ const CategoriesDropdown = () => {
       <DropdownButton
         id="dropdown-basic-button"
         title="Categories"
+        variant="success"
         className="categories-dropdown"
       >
-        <Dropdown.Item href="/" key="all-reviews">All Reviews</Dropdown.Item>
+        <Dropdown.Item href="/categories/all" key="all-reviews">All Reviews</Dropdown.Item>
 
         {categories.map((category) => {
           return (
