@@ -16,3 +16,7 @@ export const getReviews = async () => {
     console.log(data)
     return data.reviews;
 }
+
+export const changeCategory = async () => {
+    
+}

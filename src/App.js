@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import { Switch, Route, useParams } from "react-router-dom";
 import Reviews from "./components/Reviews";
+import SingleReview from "./components/SingleReview";
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route exact path="/category/:category">
           <Reviews />
+        </Route>
+        <Route exact path="/reviews/:review_id">
+          <SingleReview />
         </Route>
       </Switch>
     </div>
