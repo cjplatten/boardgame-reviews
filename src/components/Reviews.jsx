@@ -15,7 +15,8 @@ const Reviews = () => {
 
   return (
     <div>
-      <h2>Reviews</h2>
+      {category ? <h2>{category.replace(/-/g, " ")} Reviews</h2> 
+      : <h2>All Reviews</h2> }
       <ul className="all-reviews">
         {reviews.map((review, index) => {
           return (
@@ -27,7 +28,7 @@ const Reviews = () => {
                 <div className="reviews-in-list-info-line">
                   <h5>
                     {review.owner} | {review.created_at.slice(0, 10)} |
-                    Category: {review.category}
+                    Category: {review.category.replace(/-/g, " ")}
                   </h5>
                 </div>
                 <div className="reviews-in-list-body-preview">

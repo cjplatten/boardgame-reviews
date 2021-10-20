@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewComments } from "../utils/api";
+import PostComment from "./PostComment";
 
 const SingleReviewComments = () => {
   const [comments, setComments] = useState([]);
@@ -12,11 +13,10 @@ const SingleReviewComments = () => {
     });
   }, []);
 
-  console.log(comments);
-
   return (
     <div>
       <h2>Comments</h2>
+      <PostComment comments={comments} setComments={setComments}/>
       <ul className="all-comments">
         {comments.map((comment, index) => {
           return (
@@ -32,7 +32,7 @@ const SingleReviewComments = () => {
               </div>
               <div className="comment-vote-counters">
                 <p>
-                  Votes: {comment.votes} | Comments: {comment.comment_count}
+                  Votes: {comment.votes}
                 </p>
               </div>
             </li>

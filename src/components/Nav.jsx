@@ -9,8 +9,8 @@ const Nav = () => {
 
   return (
     <div className="Nav">
-      <CategoriesDropdown />
       <p className="nav-user">Hi {userLogin.user}!</p>
+      <CategoriesDropdown />
     </div>
     
   );
