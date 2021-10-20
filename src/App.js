@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import { Switch, Route, useParams } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Reviews from "./components/Reviews";
 import SingleReview from "./components/SingleReview";
 
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/">
           <Reviews />
         </Route>
-        <Route exact path="/category/:category">
+        <Route exact path="/categories/:category">
           <Reviews />
         </Route>
         <Route exact path="/reviews/:review_id">

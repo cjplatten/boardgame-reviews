@@ -11,6 +11,7 @@
 .Nav {
   background-color: #d3ffc3;
   padding: 1px;
+  margin-bottom: 1em;
 }
 
 .all-reviews {
@@ -70,7 +71,7 @@
 
 .categories-dropdown {
   background-color: #d3ffc3;
-  border: #d3ffc3;
+  /* border: #d3ffc3; */
   margin-top: 0em;
   margin-bottom: 1em;
   text-transform: capitalize;

@@ -5,10 +5,10 @@ import { getReviews } from "../utils/api";
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
-//   console.log(category);
+  const { category } = useParams()
 
   useEffect(() => {
-    getReviews().then((reviewsFromApi) => {
+    getReviews(category).then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
     });
   }, []);
@@ -19,7 +19,7 @@ const Reviews = () => {
       <ul className="all-reviews">
         {reviews.map((review, index) => {
           return (
-            <Link to={`/reveiws/${review.review_id}`} className="card-link">
+            <Link to={`/reviews/${review.review_id}`} className="card-link">
               <li className="reviews-in-list" key={review.review_id}>
                 <div className="reviews-in-list-title">
                   <h4>{review.title}</h4>

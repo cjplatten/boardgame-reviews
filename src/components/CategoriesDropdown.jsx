@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Dropdown, DropdownButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getCategories } from "../utils/api";
 
@@ -13,23 +14,21 @@ const CategoriesDropdown = () => {
 
   return (
     <div>
-      <label for="categories">
-        <h3>Categories</h3>
-      </label>
-      <select
-        name="cars"
-        id="categories"
+      <DropdownButton
+        id="dropdown-basic-button"
+        title="Categories"
         className="categories-dropdown"
       >
-        <option className="category">All Reviews</option>
+        <Dropdown.Item href="/" key="all-reviews">All Reviews</Dropdown.Item>
+
         {categories.map((category) => {
           return (
-            <option className="category" tag={Link} to={`/categories/${category.slug}`}>
+            <Dropdown.Item href={`/categories/${category.slug}`} key={`/categories/${category.slug}`}>
               {category.slug.replace(/-/g, " ")}
-            </option>
+            </Dropdown.Item>
           );
         })}
-      </select>
+      </DropdownButton>
     </div>
   );
 };
