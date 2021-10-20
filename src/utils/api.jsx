@@ -29,3 +29,9 @@ export const getReviewComments = async (reviewId) => {
   return data.comments;
 
 }
+
+export const patchVotes = async (reviewId, incVotes) => {
+  let path = `/reviews/${reviewId}`;
+  const { data } = await reviewsApi.patch(path, {inc_votes: incVotes});
+  return data.comments;
+}
