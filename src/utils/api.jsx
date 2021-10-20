@@ -10,13 +10,16 @@ export const getCategories = async () => {
     return data.categories;
 }
 
-export const getReviews = async () => {
+export const getReviews = async (category) => {
     let path = '/reviews'
+    if (category) path += `?category=${category}`
     const { data } = await reviewsApi.get(path)
-    console.log(data)
     return data.reviews;
 }
 
-export const changeCategory = async () => {
-    
+export const getSingleReview = async (reviewId) => {
+    let path = `/reviews/${reviewId}`
+    const { data } = await reviewsApi.get(path)
+    console.log(data)
+    return data.review;
 }
