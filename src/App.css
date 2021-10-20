@@ -23,7 +23,18 @@
   /* display: flex; */
   border: 5px solid #e9f0f4;
   margin-bottom: 1.5em;
+  background-color: #f1f1f1;
 }
+
+.reviews-in-list:hover {
+  background-color: #d9f1e5;;
+}
+/* .reviews-in-list-title h4:hover {
+  background-color: #c6d2da;
+} */
+/* .reviews-in-list-info-line h5:hover {
+  background-color: #c6d2da;
+} */
 
 .reviews-in-list-title h4 {
   margin: auto;
@@ -31,6 +42,7 @@
   padding-top: 25px;
   padding-bottom: 4px;
 }
+
 
 .reviews-in-list-info-line h5 {
   color: #54585a;
@@ -44,7 +56,7 @@
   text-align: left;
   margin-left: 1em;
 }
-.reviews-in-list-comment-counter p {
+.reviews-in-list-comment-vote-counters p {
   margin-top: 1em;
   margin-bottom: 1em;
   font-size: small;
@@ -62,4 +74,18 @@
   margin-top: 0em;
   margin-bottom: 1em;
   text-transform: capitalize;
+}
+
+.card-link {
+  color: inherit;
+  text-decoration: none
+}
+
+.header-link {
+  color: inherit;
+  text-decoration: inherit
+}
+
+.header-link:hover {
+  color: #679757;
 }
