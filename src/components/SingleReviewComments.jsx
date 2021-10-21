@@ -6,10 +6,13 @@ import PostComment from "./PostComment";
 const SingleReviewComments = () => {
   const [comments, setComments] = useState([]);
   const { review_id } = useParams();
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    setIsLoading(true)
     getReviewComments(review_id).then((commentsFromApi) => {
       setComments(commentsFromApi);
+      setIsLoading(false)
     });
   }, []);
 
@@ -17,7 +20,8 @@ const SingleReviewComments = () => {
     <div>
       <h2>Comments</h2>
       <PostComment comments={comments} setComments={setComments}/>
-      <ul className="all-comments">
+      {isLoading ? <h2> Loading... </h2>
+      : <ul className="all-comments">
         {comments.map((comment, index) => {
           return (
             <li className="comments-in-list" key={comment.comment_id}>
@@ -38,7 +42,7 @@ const SingleReviewComments = () => {
             </li>
           );
         })}
-      </ul>
+      </ul>}
     </div>
   );
 };

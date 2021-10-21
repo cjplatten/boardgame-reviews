@@ -6,6 +6,7 @@ import Reviews from "./components/Reviews";
 import SingleReview from "./components/SingleReview";
 import { useState } from "react";
 import { UserContext } from "./contexts/UserContext";
+import LogIn from "./components/LogIn";
 
 function App() {
   const [userLogin, setUserLogin] = useState({
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route exact path="/reviews/:review_id">
           <SingleReview />
+        </Route>
+        <Route exact path="/login">
+          <LogIn />
         </Route>
       </Switch>
     </div>

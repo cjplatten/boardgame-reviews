@@ -10,15 +10,19 @@ const SingleReview = () => {
   const [voteCount, setVoteCount] = useState(0);
   const [createdAt, setCreatedAt] = useState('')
   const { review_id } = useParams();
+  const [isLoading, setIsLoading] = useState(false)
 
   console.log(review_id);
 
-  useEffect(() => {
+  useEffect(() => {    
+    setIsLoading(true)
+    
     getSingleReview(review_id).then((reviewFromApi) => {
       setReview(reviewFromApi);
       setCommentCount(reviewFromApi.comment_count);
       setVoteCount(reviewFromApi.votes);
       setCreatedAt(reviewFromApi.created_at.slice(0,10))
+      setIsLoading(false)
     });
   }, []);
 
@@ -26,7 +30,8 @@ const SingleReview = () => {
 
   return (
     <div className="single-review-page">
-      <div className="single-review">
+      {isLoading ? <h2> Loading... </h2>
+      :<div className="single-review">
         <div className="single-review-title">
           <h4>{review.title}</h4>
         </div>
@@ -45,7 +50,7 @@ const SingleReview = () => {
             <p>Comments: {commentCount}</p>
           </div>
         </div>
-      </div>
+      </div>}
       <SingleReviewComments />
     </div>
   );

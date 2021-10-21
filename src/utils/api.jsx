@@ -33,5 +33,11 @@ export const getReviewComments = async (reviewId) => {
 export const patchVotes = async (reviewId, incVotes) => {
   let path = `/reviews/${reviewId}`;
   const { data } = await reviewsApi.patch(path, {inc_votes: incVotes});
-  return data.comments;
+  return data.review;
+}
+
+export const postComment = async (reviewId, newCommentBody, user) => {
+  let path = `/reviews/${reviewId}/comments`;
+  const { data } = await reviewsApi.post(path, {username: user, body: newCommentBody});
+  return data.comment;
 }

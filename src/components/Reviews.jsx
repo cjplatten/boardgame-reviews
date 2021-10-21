@@ -4,20 +4,24 @@ import { getReviews } from "../utils/api";
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
   const { category } = useParams()
 
   useEffect(() => {
+    setIsLoading(true)
     getReviews(category).then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
+      setIsLoading(false)
     });
-  }, []);
+  }, [category]);
 
   return (
     <div>
       {category ? <h2>{category.replace(/-/g, " ")} Reviews</h2> 
       : <h2>All Reviews</h2> }
-      <ul className="all-reviews">
+      {isLoading ? <h2> Loading... </h2>
+      :<ul className="all-reviews">
         {reviews.map((review, index) => {
           return (
             <Link to={`/reviews/${review.review_id}`} className="card-link">
@@ -41,7 +45,7 @@ const Reviews = () => {
             </Link>
           );
         })}
-      </ul>
+      </ul>}
     </div>
   );
 };
