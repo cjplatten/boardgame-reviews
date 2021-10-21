@@ -8,11 +8,13 @@ const Nav = () => {
   const { userLogin } = useContext(UserContext);
 
   return (
-    <div className="Nav">
-      <p className="nav-user">Hi {userLogin.user}!</p>
-      <CategoriesDropdown />
-    </div>
     
+    <ul className="Nav">
+      <li id="nav-dropdown">
+        <CategoriesDropdown />
+      </li>
+      <li id="nav-user">Hi {userLogin.user}!</li>
+    </ul>
   );
 };
 
