@@ -1,6 +1,7 @@
 h2 {
   text-transform: capitalize;
 }
+
 .App {
   text-align: center;
   background-color: #f8f8f8;
@@ -41,11 +42,24 @@ h2 {
   margin-right: 0em;
   text-transform: capitalize;
 }
+
 #nav-user {
   margin-right: 1em;
   float: right;
   margin-top: 1.5em;
   margin-bottom: auto;
+}
+
+#nav-user-login {
+  margin-right: 1em;
+  float: right;
+  margin-top: 1.5em;
+  margin-bottom: auto;
+  color:darkgreen
+}
+
+#nav-user-login :hover {
+  color:rgb(32, 148, 32)
 }
 
 /* ---------- Reviews List ---------- */

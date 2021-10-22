@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { getCategories } from "../utils/api";
 import CategoriesDropdown from "./CategoriesDropdown";
+import LogOut from "./LogOut";
 
 const Nav = () => {
   const { userLogin } = useContext(UserContext);
@@ -14,9 +15,10 @@ const Nav = () => {
       <li id="nav-dropdown">
         <CategoriesDropdown />
       </li>
-      {userLogin.loggedIn ? <li id="nav-user">Hi {userLogin.user}!</li> 
+      {userLogin.loggedIn ? <li id="nav-user">Hi {userLogin.user}!
+      <LogOut /> </li> 
       : <li>
-        <Link to='/login'>Log in</Link>
+        <Link id="nav-user-login" to='/login'>Log in</Link>
       </li>}
     </ul>
   );

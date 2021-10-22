@@ -41,3 +41,9 @@ export const postComment = async (reviewId, newCommentBody, user) => {
   const { data } = await reviewsApi.post(path, {username: user, body: newCommentBody});
   return data.comment;
 }
+
+export const getUsers = async () => {
+  let path = `/users`
+  const { data } = await reviewsApi.get(path)
+  return data.users;
+}

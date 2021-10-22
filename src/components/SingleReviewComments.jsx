@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import { getReviewComments } from "../utils/api";
 import PostComment from "./PostComment";
 
@@ -8,6 +10,7 @@ const SingleReviewComments = () => {
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
   const [newCommentRender, setNewCommentRender] = useState([]);
+  const { userLogin } = useContext(UserContext)
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,11 +23,12 @@ const SingleReviewComments = () => {
   return (
     <div>
       <h2>Comments</h2>
-      <PostComment
+      {userLogin.loggedIn ?<PostComment
         comments={comments}
         setComments={setComments}
         setNewCommentRender={setNewCommentRender}
-      />
+      /> 
+      : <h4>Please log in to post a comment.</h4>}
       {isLoading ? (
         <h2> Loading... </h2>
       ) : (
