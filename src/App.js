@@ -4,15 +4,26 @@ import Nav from "./components/Nav";
 import { Switch, Route } from "react-router-dom";
 import Reviews from "./components/Reviews";
 import SingleReview from "./components/SingleReview";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { UserContext } from "./contexts/UserContext";
 import LogIn from "./components/LogIn";
 
 function App() {
   const [userLogin, setUserLogin] = useState({
-    loggedIn: true,
-    user: "cooljmessy",
+    loggedIn: false,
+    user: '',
   });
+
+  useEffect(() => {
+    const prevLoggedInUser = JSON.parse(localStorage.getItem('loggedInUser'))
+    console.log(prevLoggedInUser, typeof(prevLoggedInUser));
+
+    if (prevLoggedInUser) {
+      setUserLogin({loggedIn: true, user: prevLoggedInUser.username})
+    }
+  },[])
+  console.log(userLogin);
+
 
   return (
     <UserContext.Provider value={{userLogin, setUserLogin }}>

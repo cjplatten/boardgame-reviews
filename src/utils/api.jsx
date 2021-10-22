@@ -11,7 +11,7 @@ export const getCategories = async () => {
 
 export const getReviews = async (category) => {
   let path = "/reviews";
-  if (category && category!='all') path += `?category=${category}`;
+  if (category && category != "all") path += `?category=${category}`;
   const { data } = await reviewsApi.get(path);
   return data.reviews;
 };
@@ -19,7 +19,6 @@ export const getReviews = async (category) => {
 export const getSingleReview = async (reviewId) => {
   let path = `/reviews/${reviewId}`;
   const { data } = await reviewsApi.get(path);
-  console.log(data);
   return data.review;
 };
 
@@ -27,23 +26,25 @@ export const getReviewComments = async (reviewId) => {
   let path = `/reviews/${reviewId}/comments`;
   const { data } = await reviewsApi.get(path);
   return data.comments;
-
-}
+};
 
 export const patchVotes = async (reviewId, incVotes) => {
   let path = `/reviews/${reviewId}`;
-  const { data } = await reviewsApi.patch(path, {inc_votes: incVotes});
+  const { data } = await reviewsApi.patch(path, { inc_votes: incVotes });
   return data.review;
-}
+};
 
 export const postComment = async (reviewId, newCommentBody, user) => {
   let path = `/reviews/${reviewId}/comments`;
-  const { data } = await reviewsApi.post(path, {username: user, body: newCommentBody});
+  const { data } = await reviewsApi.post(path, {
+    username: user,
+    body: newCommentBody,
+  });
   return data.comment;
-}
+};
 
 export const getUsers = async () => {
-  let path = `/users`
-  const { data } = await reviewsApi.get(path)
+  let path = `/users`;
+  const { data } = await reviewsApi.get(path);
   return data.users;
-}
+};

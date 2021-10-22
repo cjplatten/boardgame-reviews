@@ -16,11 +16,9 @@ const PostComment = ({ comments, setComments, setNewCommentRender }) => {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    console.log(newComment);
     postComment(review_id, newComment, userLogin.user).then(
       (responseFromApi) => {
         setCommentResponse(responseFromApi);
-        console.log(commentResponse);
         setNewCommentRender((currNewCommentRender) => {
           const updatedCommentRender = [...currNewCommentRender]
           updatedCommentRender.unshift(responseFromApi)
@@ -30,7 +28,6 @@ const PostComment = ({ comments, setComments, setNewCommentRender }) => {
       }
     );
     setIsLoading(false);
-    console.log("submitted!", e);
   }
 
   function handleInputChange(e) {

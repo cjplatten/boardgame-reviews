@@ -2,9 +2,13 @@ h2 {
   text-transform: capitalize;
 }
 
+body, html {
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
 .App {
   text-align: center;
-  background-color: #f8f8f8;
 }
 
 /* ---------- Header ---------- */

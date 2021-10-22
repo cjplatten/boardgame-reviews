@@ -20,6 +20,7 @@ const Reviews = () => {
     <div>
       {category ? <h2>{category.replace(/-/g, " ")} Reviews</h2> 
       : <h2>All Reviews</h2> }
+      
       {isLoading ? <h2> Loading... </h2>
       :<ul className="all-reviews">
         {reviews.map((review, index) => {
@@ -46,6 +47,7 @@ const Reviews = () => {
           );
         })}
       </ul>}
+      
     </div>
   );
 };

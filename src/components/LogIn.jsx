@@ -19,6 +19,7 @@ const LogIn = () => {
           loggedIn: true,
           user: userEntry,
         });
+        localStorage.setItem('loggedInUser', JSON.stringify({username: userEntry}))
       } else {
         setUserNotFound(true);
       }
@@ -26,7 +27,6 @@ const LogIn = () => {
   }
 
   function handleInputChange(e) {
-    console.log(e.target.value);
     setUserEntry(e.target.value);
   }
 

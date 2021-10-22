@@ -12,8 +12,6 @@ const SingleReview = () => {
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log(review_id);
-
   useEffect(() => {    
     setIsLoading(true)
     
@@ -25,8 +23,6 @@ const SingleReview = () => {
       setIsLoading(false)
     });
   }, []);
-
-  console.log(review);
 
   return (
     <div className="single-review-page">
