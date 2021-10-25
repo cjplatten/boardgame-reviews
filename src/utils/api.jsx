@@ -13,7 +13,7 @@ export const getReviews = async (category, sort_by) => {
   let path = "/reviews";
   if (category && category !== "all") path += `?category=${category}`;
   if (sort_by && category && category !== "all") path += `&sort_by=${sort_by}`
-  if (sort_by && !category || category === "all") path += `?sort_by=${sort_by}`
+  if (sort_by && (!category || category === "all")) path += `?sort_by=${sort_by}`
   
   const { data } = await reviewsApi.get(path);
   return data.reviews;
