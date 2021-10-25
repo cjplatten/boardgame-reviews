@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Dropdown, DropdownButton, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { getCategories } from "../utils/api";
 
@@ -13,24 +13,24 @@ const CategoriesDropdown = () => {
   }, []);
 
   return (
-    <div>
-      <DropdownButton
-        id="dropdown-basic-button"
+    <>
+      <NavDropdown
+        id="basic-nav-dropdown"
         title="Categories"
-        variant="success"
-        className="categories-dropdown"
+        // variant="success"
+        // className="categories-dropdown"
       >
-        <Dropdown.Item href="/categories/all" key="all-reviews">All Reviews</Dropdown.Item>
+        <NavDropdown.Item href="/categories/all" key="all-reviews">All Reviews</NavDropdown.Item>
 
         {categories.map((category) => {
           return (
-            <Dropdown.Item href={`/categories/${category.slug}`} key={`/categories/${category.slug}`}>
+            <NavDropdown.Item href={`/categories/${category.slug}`} key={`/categories/${category.slug}`}>
               {category.slug.replace(/-/g, " ")}
-            </Dropdown.Item>
+            </NavDropdown.Item>
           );
         })}
-      </DropdownButton>
-    </div>
+      </NavDropdown>
+    </>
   );
 };
 

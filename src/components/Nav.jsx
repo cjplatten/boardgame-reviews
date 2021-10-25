@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useEffect, useState } from "react";
+import { Container, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { getCategories } from "../utils/api";
@@ -10,13 +11,12 @@ const Nav = () => {
   const { userLogin } = useContext(UserContext);
 
   return (
-    
+
     <ul className="Nav">
       <li id="nav-dropdown">
         <CategoriesDropdown />
       </li>
-      {userLogin.loggedIn ? <li id="nav-user">Hi {userLogin.user}!
-      <LogOut /> </li> 
+      {userLogin.loggedIn ? <li id="nav-user"><p id="nav-username">Hi {userLogin.user}!</p><p><LogOut /></p> </li>
       : <li>
         <Link id="nav-user-login" to='/login'>Log in</Link>
       </li>}

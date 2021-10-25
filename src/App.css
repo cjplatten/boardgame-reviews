@@ -27,6 +27,7 @@ body, html {
   padding: 1px;
   margin-bottom: 1em;
   width: 100%;
+  z-index: 2;
 }
 
 .Nav ul {
@@ -48,17 +49,22 @@ body, html {
 }
 
 #nav-user {
-  margin-right: 1em;
-  float: right;
-  margin-top: 1.5em;
+  
+  margin-top: 1em;
   margin-bottom: auto;
+  position: absolute;
+  right: 1em;
+}
+
+#nav-username {
+  margin-right: 1em;
 }
 
 #nav-user-login {
-  margin-right: 1em;
-  float: right;
-  margin-top: 1.5em;
+  margin-top: 1em;
   margin-bottom: auto;
+  position: absolute;
+  right:0;
   color:darkgreen
 }
 
@@ -67,6 +73,11 @@ body, html {
 }
 
 /* ---------- Reviews List ---------- */
+
+.sort-by-dropdown {
+  
+  position: relative;
+}
 
 .all-reviews {
   list-style-type: none;
