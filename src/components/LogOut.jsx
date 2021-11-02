@@ -13,7 +13,7 @@ const LogOut = () => {
 
     return (
         <div>
-            <button onClick={handleLogOut}>Log out</button>
+            <button onClick={handleLogOut} className='button'>Log out</button>
         </div>
     );
 };

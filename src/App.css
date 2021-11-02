@@ -2,7 +2,8 @@ h2 {
   text-transform: capitalize;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   background-color: #f8f8f8;
 }
@@ -11,6 +12,13 @@ body, html {
   text-align: center;
 }
 
+.button {
+  color: rgb(3, 39, 3);
+  background-color: #93c981;
+  /* border-radius: 5px; */
+  border: none;
+  margin-left: 5px;
+}
 /* ---------- Header ---------- */
 
 .Header {
@@ -41,6 +49,10 @@ body, html {
   display: inline-flex;
 }
 
+#basic-nav-dropdown {
+  color: darkgreen;
+}
+
 #nav-dropdown {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -49,7 +61,6 @@ body, html {
 }
 
 #nav-user {
-  
   margin-top: 1em;
   margin-bottom: auto;
   position: absolute;
@@ -62,20 +73,31 @@ body, html {
 
 #nav-user-login {
   margin-top: 1em;
-  margin-bottom: auto;
+  margin-bottom: 1em;
   position: absolute;
-  right:0;
-  color:darkgreen
+  right: 1em;
+}
+
+#nav-user-login-link {
+  color: darkgreen;
+  color: rgb(3, 39, 3);
+  background-color: #93c981;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  text-decoration: none;
 }
 
 #nav-user-login :hover {
-  color:rgb(32, 148, 32)
+  color: rgb(0, 185, 0);
 }
+
+
 
 /* ---------- Reviews List ---------- */
 
 .sort-by-dropdown {
-  
   position: relative;
 }
 
@@ -142,8 +164,6 @@ body, html {
 }
 
 /* ---------- Single Review ---------- */
-
-
 
 /* ---------- Comment Section ---------- */
 

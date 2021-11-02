@@ -9,26 +9,36 @@ const SingleReviewComments = () => {
   const [comments, setComments] = useState([]);
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState(null);
   const [newCommentRender, setNewCommentRender] = useState([]);
-  const { userLogin } = useContext(UserContext)
+  const { userLogin } = useContext(UserContext);
 
   useEffect(() => {
     setIsLoading(true);
     getReviewComments(review_id).then((commentsFromApi) => {
       setComments(commentsFromApi);
       setIsLoading(false);
+    })
+    .catch((err) => {
+      if (err.response.status === 404) setErr('Comments not found.')
+      else setErr('Something went wrong.')
     });
   }, [newCommentRender]);
+
+  if (err) return <p>{err}</p>;
 
   return (
     <div>
       <h2>Comments</h2>
-      {userLogin.loggedIn ?<PostComment
-        comments={comments}
-        setComments={setComments}
-        setNewCommentRender={setNewCommentRender}
-      /> 
-      : <h4>Please log in to post a comment.</h4>}
+      {userLogin.loggedIn ? (
+        <PostComment
+          comments={comments}
+          setComments={setComments}
+          setNewCommentRender={setNewCommentRender}
+        />
+      ) : (
+        <h4>Please log in to post a comment.</h4>
+      )}
       {isLoading ? (
         <h2> Loading... </h2>
       ) : (

@@ -11,15 +11,24 @@ const Nav = () => {
   const { userLogin } = useContext(UserContext);
 
   return (
-
     <ul className="Nav">
       <li id="nav-dropdown">
         <CategoriesDropdown />
       </li>
-      {userLogin.loggedIn ? <li id="nav-user"><p id="nav-username">Hi {userLogin.user}!</p><p><LogOut /></p> </li>
-      : <li>
-        <Link id="nav-user-login" to='/login'>Log in</Link>
-      </li>}
+      {userLogin.loggedIn ? (
+        <li id="nav-user">
+          <p id="nav-username">Hi {userLogin.user}!</p>
+          <p>
+            <LogOut />
+          </p>{" "}
+        </li>
+      ) : (
+        <li id="nav-user-login" >
+            <Link id="nav-user-login-link" to="/login">
+              Log in
+            </Link>
+        </li>
+      )}
     </ul>
   );
 };

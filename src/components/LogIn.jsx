@@ -4,22 +4,23 @@ import { UserContext } from "../contexts/UserContext";
 import { getUsers } from "../utils/api";
 
 const LogIn = () => {
-  const { userLogin, setUserLogin } = useContext(UserContext);
+  const { userLogin, setUserLogin } = useContext(UserContext); 
   const [userEntry, setUserEntry] = useState("");
   const [userNotFound, setUserNotFound] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    setIsLoading(true)
     getUsers().then((usersFromApi) => {
       if (usersFromApi.some((user) => user.username === userEntry)) {
         setUserNotFound(false);
-
         setUserLogin({
           loggedIn: true,
           user: userEntry,
         });
         localStorage.setItem('loggedInUser', JSON.stringify({username: userEntry}))
+        setIsLoading(false)
       } else {
         setUserNotFound(true);
       }
@@ -29,6 +30,8 @@ const LogIn = () => {
   function handleInputChange(e) {
     setUserEntry(e.target.value);
   }
+
+if (isLoading) return <p>Loading...</p>
 
   return (
     <>
@@ -49,7 +52,7 @@ const LogIn = () => {
             placeholder="Guest? Use 'jessjelly'."
             required
           />
-          <button>Log in</button>
+          <button className='button'>Log in</button>
 
           {userNotFound && <p>User not found</p>}
         </form>

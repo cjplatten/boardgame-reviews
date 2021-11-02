@@ -10,6 +10,7 @@ const SingleReview = () => {
   const [voteCount, setVoteCount] = useState(0);
   const [createdAt, setCreatedAt] = useState('')
   const { review_id } = useParams();
+  const [err, setErr] = useState(null);
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {    
@@ -21,8 +22,14 @@ const SingleReview = () => {
       setVoteCount(reviewFromApi.votes);
       setCreatedAt(reviewFromApi.created_at.slice(0,10))
       setIsLoading(false)
+    })
+    .catch((err) => {
+      if (err.response.status === 404) setErr('Review not found.')
+      else setErr('Something went wrong.')
     });
   }, []);
+
+  if (err) return <p>{err}</p>;
 
   return (
     <div className="single-review-page">
