@@ -67,9 +67,9 @@ html {
   right: 1em;
 }
 
-#nav-username {
+/* #nav-username {
   margin-right: 1em;
-}
+} */
 
 #nav-user-login {
   margin-top: 1em;
@@ -79,7 +79,6 @@ html {
 }
 
 #nav-user-login-link {
-  color: darkgreen;
   color: rgb(3, 39, 3);
   background-color: #93c981;
   padding-left: 5px;
@@ -93,7 +92,23 @@ html {
   color: rgb(0, 185, 0);
 }
 
+@media only screen and (max-width: 500px) {
+  .Nav ul {
+    justify-content: space-between;
+  }
 
+  #nav-dropdown {
+    justify-content: start;
+  }
+
+  #nav-user {
+    position: static;
+  }
+  #nav-user-login {
+    justify-content: end;
+    position: static;
+  }
+}
 
 /* ---------- Reviews List ---------- */
 
