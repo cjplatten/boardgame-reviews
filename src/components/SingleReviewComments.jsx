@@ -23,7 +23,7 @@ const SingleReviewComments = () => {
       if (err.response.status === 404) setErr('Comments not found.')
       else setErr('Something went wrong.')
     });
-  }, [newCommentRender]);
+  }, [newCommentRender, review_id]);
 
   if (err) return <p>{err}</p>;
 

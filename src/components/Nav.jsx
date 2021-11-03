@@ -1,9 +1,6 @@
 import { useContext } from "react";
-import { useEffect, useState } from "react";
-import { Container, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-import { getCategories } from "../utils/api";
 import CategoriesDropdown from "./CategoriesDropdown";
 import LogOut from "./LogOut";
 

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Dropdown, DropdownButton, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
 import { getCategories } from "../utils/api";
 
 const CategoriesDropdown = () => {

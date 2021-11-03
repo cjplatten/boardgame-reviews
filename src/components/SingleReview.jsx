@@ -27,7 +27,7 @@ const SingleReview = () => {
       if (err.response.status === 404) setErr('Review not found.')
       else setErr('Something went wrong.')
     });
-  }, []);
+  }, [review_id]);
 
   if (err) return <p>{err}</p>;
 
