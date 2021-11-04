@@ -15,7 +15,7 @@ html {
 .button {
   color: rgb(3, 39, 3);
   background-color: #93c981;
-  /* border-radius: 5px; */
+  border-radius: 3px;
   border: none;
   margin-left: 5px;
 }
@@ -67,10 +67,6 @@ html {
   right: 1em;
 }
 
-/* #nav-username {
-  margin-right: 1em;
-} */
-
 #nav-user-login {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -86,10 +82,6 @@ html {
   padding-top: 1px;
   padding-bottom: 1px;
   text-decoration: none;
-}
-
-#nav-user-login :hover {
-  color: rgb(0, 185, 0);
 }
 
 @media only screen and (max-width: 500px) {
@@ -108,6 +100,21 @@ html {
     justify-content: end;
     position: static;
   }
+}
+
+/* ---------- Home ---------- */
+
+.home-all-reviews-button {
+  height: 4em;
+  width: 60%;
+  background-color: #93c981;
+  border: none;
+  border-radius: 10px;
+}
+
+.random-review-grid-img {
+  height: 10em;
+  width: 10em;
 }
 
 /* ---------- Reviews List ---------- */
@@ -180,7 +187,9 @@ html {
 
 /* ---------- Single Review ---------- */
 
-/* ---------- Comment Section ---------- */
+
+
+/* ---------- Post Comment ---------- */
 
 .post-comment-container {
   margin: auto;
@@ -190,11 +199,18 @@ html {
 
 .post-comment {
   width: 100%;
-  /* margin-left: auto;
-  margin-right: auto; */
 }
 
 .post-comment-button {
   margin-top: 0.3em;
   margin-left: 75%;
+  border: none;
+  background-color: #93c981;
+
 }
+
+.post-another-comment-button {
+  background-color: #93c981;
+ }
+
+/* ---------- Comment Section ---------- */
