@@ -7,6 +7,7 @@ import SingleReview from "./components/SingleReview";
 import { useEffect, useState } from "react";
 import { UserContext } from "./contexts/UserContext";
 import LogIn from "./components/LogIn";
+import Home from "./components/Home";
 
 function App() {
   const [userLogin, setUserLogin] = useState({
@@ -32,7 +33,7 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Reviews />
+          <Home />
         </Route>
         <Route exact path="/categories/:category">
           <Reviews />
