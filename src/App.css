@@ -2,13 +2,12 @@ h2 {
   text-transform: capitalize;
 }
 
-body,
-html {
+body {
   height: 100%;
-  background-color: #f8f8f8;
 }
 
 .App {
+  background-color: #f6f6f6;
   text-align: center;
 }
 
@@ -110,11 +109,48 @@ html {
   background-color: #93c981;
   border: none;
   border-radius: 10px;
+  margin-bottom: 2em;
 }
 
 .random-review-grid-img {
-  height: 10em;
-  width: 10em;
+  object-fit: contain;
+  /* height: 10em;*/
+  max-width: 95%;
+  max-height: 10em;
+  margin-top: 0.2em;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+  margin-bottom: 1em;
+}
+
+.random-reveiws-grid {
+  list-style-type: none;
+  margin: 1.5em;
+  padding-left: 0;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+
+
+.random-reveiws-grid-link {
+  width: 30%;
+  
+  border: 3px solid #d1d6da;
+  border-radius: 5px;
+  background-color: #e6ecf0;
+  text-decoration: none;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+h5.random-reveiws-grid-link {
+  text-decoration: none;
+  color: #212529;
+  margin-top: 1em; 
+  background-color: #d5dee4;
+  
 }
 
 /* ---------- Reviews List ---------- */
@@ -126,13 +162,22 @@ html {
 .all-reviews {
   list-style-type: none;
   margin: 1.5em;
-  margin-left: 0em;
+  padding-left: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .all-reviews {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 55em;
+  }
 }
 
 .reviews-in-list {
-  /* display: flex; */
-  border: 5px solid #e9f0f4;
-  margin-bottom: 1.5em;
+  align-content: center;
+  border: 5px solid #d1d6da;
+  border-radius: 7px;
+  margin-bottom: 1em;
   background-color: #f1f1f1;
 }
 
@@ -154,11 +199,14 @@ html {
   padding-top: 5px;
   padding-bottom: 15px;
 }
+
 .reviews-in-list-body-preview p {
   margin-top: 1em;
   text-align: left;
   margin-left: 1em;
+  background-color: #f1f1f1;
 }
+
 .reviews-in-list-comment-vote-counters p {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -166,10 +214,6 @@ html {
   text-align: left;
   margin-left: 1em;
 }
-/* 
-.category {
-  text-transform: capitalize;
-} */
 
 .card-link {
   color: inherit;
@@ -186,8 +230,6 @@ html {
 }
 
 /* ---------- Single Review ---------- */
-
-
 
 /* ---------- Post Comment ---------- */
 
@@ -206,11 +248,11 @@ html {
   margin-left: 75%;
   border: none;
   background-color: #93c981;
-
 }
 
 .post-another-comment-button {
+  border: none;
   background-color: #93c981;
- }
+}
 
 /* ---------- Comment Section ---------- */

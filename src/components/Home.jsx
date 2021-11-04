@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true);
     let randomReviewIds = [];
-    const randomNumber = () => Math.floor(Math.random() * 23) +1;
+    const randomNumber = () => Math.floor(Math.random() * 23) + 1;
 
     while (randomReviewIds.length < 3) {
       const randomReviewId = randomNumber();
@@ -33,6 +33,11 @@ const Home = () => {
   }, []);
   console.log(randomReviews);
 
+  //TO DO:
+  // Make reviews link to review page
+  // style reviews in 1 row 3 column grid
+  // account for mobile viewing of grid
+
   return (
     <div>
       <section>
@@ -54,20 +59,22 @@ const Home = () => {
         </Link>
       </section>
       <section className="random-reveiws">
-        <h4>Random Reviews</h4>
+        <h4>Fancy a random review to get you started?</h4>
         <ul className="random-reveiws-grid">
           {randomReviews.map((review) => {
             return (
-              <li key={review.review_id + "-grid"}>
-                <img
-                  className="random-review-grid-img"
-                  src={review.review_img_url}
-                  alt={review.title}
-                />
-                <h6>{review.title}</h6>
-                <p>{review.category}</p>
-                <p></p>
-              </li>
+              <Link to={`/reviews/${review.review_id}`} className="random-reveiws-grid-link">
+                <li key={review.review_id + "-grid"}>
+                  <img
+                    className="random-review-grid-img"
+                    src={review.review_img_url}
+                    alt={review.title}
+                  />
+                  <h5>{review.title}</h5>
+                  <p>{review.category}</p>
+                  <p>Votes: {review.votes}</p>
+                </li>
+              </Link>
             );
           })}
         </ul>
