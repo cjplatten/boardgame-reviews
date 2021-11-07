@@ -131,11 +131,9 @@ body {
   justify-content: space-between;
 }
 
-
-
 .random-reveiws-grid-link {
   width: 30%;
-  
+
   border: 3px solid #d1d6da;
   border-radius: 5px;
   background-color: #e6ecf0;
@@ -148,15 +146,31 @@ body {
 h5.random-reveiws-grid-link {
   text-decoration: none;
   color: #212529;
-  margin-top: 1em; 
+  margin-top: 1em;
   background-color: #d5dee4;
-  
 }
 
+.random-review-vote-counter {
+  margin-bottom: 0.3em;
+  margin-top: 1em;
+  font-size: small;
+  color: #54585a;
+}
+
+.random-review-comment-counter {
+  margin-bottom: 0.5em;
+  font-size: small;
+  color: #54585a;
+}
 /* ---------- Reviews List ---------- */
 
 .sort-by-dropdown {
   position: relative;
+}
+
+.sorted-by {
+  margin: 0.5em;
+  text-transform: capitalize;
 }
 
 .all-reviews {
@@ -204,7 +218,6 @@ h5.random-reveiws-grid-link {
   margin-top: 1em;
   text-align: left;
   margin-left: 1em;
-  background-color: #f1f1f1;
 }
 
 .reviews-in-list-comment-vote-counters p {
@@ -212,6 +225,7 @@ h5.random-reveiws-grid-link {
   margin-bottom: 1em;
   font-size: small;
   text-align: left;
+  color: #54585a;
   margin-left: 1em;
 }
 
@@ -231,12 +245,75 @@ h5.random-reveiws-grid-link {
 
 /* ---------- Single Review ---------- */
 
+.single-review {
+  list-style-type: none;
+  margin: 1.5em;
+  padding-left: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .single-review {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 70em;
+  }
+}
+
+.single-review {
+  align-content: center;
+  border: 5px solid #d1d6da;
+  border-radius: 7px;
+  margin-bottom: 1em;
+  background-color: #f1f1f1;
+}
+
+.single-review-title h4 {
+  margin: auto;
+  background-color: #d5dee4;
+  padding-top: 25px;
+  padding-bottom: 4px;
+}
+
+.single-review-info-line h5 {
+  color: #54585a;
+  margin-top: auto;
+  background-color: #d5dee4;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.single-review-body-text p {
+  margin-top: 1em;
+  text-align: left;
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: #f1f1f1;
+}
+
+.single-review-comment-counter {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  margin-left: 1em;
+  font-size: small;
+  text-align: left;
+  color: #54585a;
+  padding-left: 1em;
+}
+
 /* ---------- Post Comment ---------- */
 
 .post-comment-container {
   margin: auto;
   width: 80%;
   position: relative;
+}
+
+@media only screen and (min-width: 1000px) {
+  .post-comment-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 55em;
+  }
 }
 
 .post-comment {
@@ -256,3 +333,60 @@ h5.random-reveiws-grid-link {
 }
 
 /* ---------- Comment Section ---------- */
+
+.all-comments {
+  list-style-type: none;
+  margin: 1.5em;
+  padding-left: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .all-comments {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 55em;
+  }
+}
+
+.comments-in-list {
+  align-content: left;
+  border: 5px solid #d1d6da;
+  border-radius: 7px;
+  margin-bottom: 1em;
+  background-color: #f1f1f1;
+}
+
+.comment-author h4 {
+  text-align: left;
+  margin: auto;
+  background-color: #d5dee4;
+  padding-left: 1em;
+  padding-top: 25px;
+  padding-bottom: 4px;
+}
+
+.comment-info-line h5 {
+  color: #54585a;
+  text-align: left;
+  margin-top: auto;
+  padding-left: 1em;
+  background-color: #d5dee4;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.comment-body p {
+  margin-top: 1em;
+  text-align: left;
+  margin-left: 1em;
+  background-color: #f1f1f1;
+}
+
+.comment-vote-counters p {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: small;
+  text-align: left;
+  color: #54585a;
+  padding-left: 1em;
+}

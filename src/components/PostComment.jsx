@@ -32,8 +32,6 @@ const PostComment = ({ comments, setComments, setNewCommentRender }) => {
     setNewComment(e.target.value);
   }
 
-  //add functionality that unshifts the new comment to a spread of the comments array once posting has finished for optimistic rendering to display the new comment at the top?
-
   if (isLoading) return <p>Posting comment...</p>
 
   return (

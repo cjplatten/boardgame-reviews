@@ -1,7 +1,7 @@
 import React from "react";
 import { Dropdown, DropdownButton } from "react-bootstrap";
 
-const SortByMenu = ({ setSortBy }) => {
+const SortByMenu = ({ sortBy, setSortBy }) => {
   return (
     <div>
       <DropdownButton
@@ -19,15 +19,6 @@ const SortByMenu = ({ setSortBy }) => {
         >
           Created At
         </Dropdown.Item>
-        {/* <Dropdown.Item
-          as="button"
-          onClick={() => {
-            setSortBy("comment_count");
-          }}
-          key="comment_count"
-        >
-          Comment Count
-        </Dropdown.Item> */}
         <Dropdown.Item
           as="button"
           onClick={() => {
@@ -38,6 +29,7 @@ const SortByMenu = ({ setSortBy }) => {
           Votes
         </Dropdown.Item>
       </DropdownButton>
+      {sortBy && <p className="sorted-by">Sorted by: {sortBy.replace(/_/g, " ")}</p>}
     </div>
   );
 };

@@ -16,8 +16,6 @@ const CategoriesDropdown = () => {
       <NavDropdown
         id="basic-nav-dropdown"
         title="Categories"
-        // variant="success"
-        // className="categories-dropdown"
       >
         <NavDropdown.Item href="/categories/all" key="all-reviews">All Reviews</NavDropdown.Item>
 

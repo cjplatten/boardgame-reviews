@@ -26,7 +26,7 @@ const Reviews = () => {
       ) : (
         <h2>All Reviews</h2>
       )}
-      <SortByMenu setSortBy={setSortBy} />
+      <SortByMenu sortBy={sortBy} setSortBy={setSortBy} />
       {isLoading ? (
         <h2> Loading... </h2>
       ) : (
