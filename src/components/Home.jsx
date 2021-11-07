@@ -28,8 +28,10 @@ const Home = () => {
         setRandomReviews((currReviews) => {
           return [...currReviews, review];
         });
+        setIsLoading(false);
       });
     });
+
   }, []);
   console.log(randomReviews);
 
@@ -60,7 +62,8 @@ const Home = () => {
       </section>
       <section className="random-reveiws">
         <h4>Fancy a random review to get you started?</h4>
-        <ul className="random-reveiws-grid">
+       {isLoading ? <p>Loading...</p> 
+       : <ul className="random-reveiws-grid">
           {randomReviews.map((review) => {
             return (
               <Link to={`/reviews/${review.review_id}`} className="random-reveiws-grid-link">
@@ -77,7 +80,7 @@ const Home = () => {
               </Link>
             );
           })}
-        </ul>
+        </ul>}
       </section>
     </div>
   );
