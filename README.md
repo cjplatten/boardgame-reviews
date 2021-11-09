@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# Boardgame Reviews Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Summary
 
-## Available Scripts
+This is a multi-page ReactJS website with which users can read, post comments to and vote on pre-written boardgame reviews. Users can also log in and log out of existing user accounts, view all reviews, filter reviews by category, sort reviews by created date and view a home page containing an introduction, a link to all reviews and card links to 3 random reviews.
+<br></br>
+The hosted version can be found here:
+https://boardgame-reviews.netlify.app/
+<br></br>
+A combination of HTML, CSS and React Bootstrap have been used for componenet construction and styling.
+<br></br>
 
-In the project directory, you can run:
+This website makes calls to an SQL database API of reviews, comments and users, the repo for which can be found here:
+https://github.com/cjplatten/cjp-nc-boardgames
+and the hosted version here:
+https://nc-boardgames-cjp.herokuapp.com/api
+<br></br>
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instructions for running locally
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 1 - Clone repo
 
-### `npm test`
+1. In the terminal, enter the directory you wish to clone the repo to by running the following:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+cd <directory_path>
+```
 
-### `npm run build`
+2. On the github page fork the repo and, once forked, click the green Code button and copy the link.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. In the directory run the following to create a new directory containing the repo:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone <github_clone_link>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Once cloning is complete you wil now be able to access the repo on your local machine from the new directory created.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 2 - Install dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Enter the repo directory on your local machine by running the following in the terminal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+cd <repo_directory_path>
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Run the following command in the terminal:
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- This will install the following dependencies as specified in `package.json`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.23.0",
+    "bootstrap": "^5.1.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.0-rc.1",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2"
+  },
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3 - Run using localhost
 
-### Analyzing the Bundle Size
+1. While still in the repo directory run the following in the terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run start
+```
 
-### Making a Progressive Web App
+2. Npm will serve the react app on port 3000, and should automatically open the browser of your choice.
+   If your browser doesn't open, the link is: http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## Minimum Requirements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Node v16.5.0
 
-### Deployment
+Version information can be found by running the following command in the terminal:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+node --version
+```
